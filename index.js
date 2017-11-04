@@ -2,6 +2,7 @@
 const express = require('express'); 
 const bodyParser = require('body-parser'); 
 const app = express(); 
+
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
@@ -21,3 +22,20 @@ app.post('/', (req, res) => {
 	}
 
 });
+
+
+app.post('/slash/pidor', (req, res) => {
+	console.log(req.body)
+})
+
+app.post('/slash/luba', (req, res) => {
+	console.log(req.body)
+})
+
+app.post('/slash/money', (req, res) => {
+	console.log(req.body)
+})
+
+app.post('/slash/moneyvevo', (req, res) => {
+	console.log(req.body)
+})
