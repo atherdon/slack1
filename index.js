@@ -26,16 +26,36 @@ app.post('/', (req, res) => {
 
 app.post('/slash/pidor', (req, res) => {
 	console.log(req.body)
+
 })
 
 app.post('/slash/luba', (req, res) => {
 	console.log(req.body)
+
 })
 
 app.post('/slash/money', (req, res) => {
 	console.log(req.body)
+
 })
 
 app.post('/slash/moneyvevo', (req, res) => {
 	console.log(req.body)
+
 })
+
+
+
+
+
+// const recastai = require('recastai')
+
+// const client = new recastai.request('1cb3cd6c2f1c6a616a810458ddb408a4', 'en')
+
+// client.analyseText('hello')
+//   .then(function(res) {
+//     if (res.intent()) { console.log('Intent: ', res.intent().slug) }
+//     if (res.intent().slug === 'YOUR_EXPECTED_INTENT') {
+//       // Do your code...
+//     }
+//   })
