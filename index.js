@@ -10,22 +10,44 @@ const server = app.listen(3000, () => {
 	console.log('Express server   listening on port %d in %s mode', 
 		server.address().port,   
 		app.settings.env);
+
+	
 });
 
 
-app.post('/', (req, res) => { 
-  let text = req.body.text; 
-  // implement your bot here ... 
+// app.post('/', (req, res) => { 
+//   let text = req.body.text; 
+//   // implement your bot here ... 
 
-	if(! /^\d+$/.test(q.text)) { // not a digit 
-		res.send('U R DOIN IT WRONG. Enter a status code like 200!');   return; 
-	}
+// 	if(! /^\d+$/.test(q.text)) { // not a digit 
+// 		res.send('U R DOIN IT WRONG. Enter a status code like 200!');   return; 
+// 	}
 
-});
+// });
 
 
 app.post('/slash/pidor', (req, res) => {
 	console.log(req.body)
+
+	let text = req.body.text; 
+
+	if( text !== 'pidka'){
+		// res.send(' this is a message, pidor');
+		res.send(' try a new message, equal "pidka"');
+
+	} 
+
+	let data = {
+		response_type: 'in_channel', // public t channel
+		text: 'A moget eto ty pidka',
+		attachments: [{
+			image_url: 'http://i0.kym-cdn.com/photos/images/newsfeed/001/108/991/1eb.png'
+		}]	
+	};
+
+	res.json(data);
+
+	
 
 })
 
